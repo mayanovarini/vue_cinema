@@ -6,7 +6,7 @@
   "author": "Anthony Gore <anthony@vuejsdevelopers.com>, Maya Novarini <iam@mayanovarini>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vuejsdevelopers/vuejs-cinema"
+    "url": "https://github.com/thegirlfromipanema/vue_cinema"
   },
   "license": "UNLICENSED",
   "scripts": {

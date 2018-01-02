@@ -5,6 +5,7 @@ Source code for the [Ultimate Vue.js Developers Course](http://bit.ly/2mPK8ny).
 ### Project 2: Vue.js Cinema
 
 #### Demo
+https://vue-cinema.herokuapp.com/ 
 
 See the completed project here: // coming soon
 #### Pre-installation
@@ -34,7 +35,7 @@ See the completed project here: // coming soon
     ```
     cd /path/to/install/location
 
-    git clone https://github.com/vuejsdevelopers/vuejs-cinema.git
+    git clone https://github.com/thegirlfromipanema/vue_cinema
     ```    
 
 2. Install dependencies
