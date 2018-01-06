@@ -39,7 +39,7 @@ new Vue({
             }
           },
           props: ['title'],
-          template: `<div v-bind:class="{ 'check-filter': true, active:checked }" v-on:click="checked = !checked">
+          template: `<div class="check-filter" v-bind:class="{ active:checked }" v-on:click="checked = !checked">
                       <span class="checkbox"></span>
                       <span class="check-filter-title">{{ title }}</span>
                     </div>`
