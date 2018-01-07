@@ -1,11 +1,9 @@
 # Ultimate Vue.js Developers Course
 
-Source code for the [Ultimate Vue.js Developers Course](http://bit.ly/2mPK8ny).
-
 ### Project 2: Vue.js Cinema
 
 #### Demo
-https://vue-cinema.herokuapp.com/ 
+https://vue-cinema.herokuapp.com/
 
 See the completed project here: // coming soon
 #### Pre-installation
