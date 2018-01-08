@@ -213,16 +213,18 @@ body, html {
 
       .main {
         display: flex;
+        flex-direction: row;
+        align-content: stretch;
 
         @media screen and (max-width: $break-small) {
           flex-direction: column;
         }
 
         #movie-list {
-          flex-basis: 75%;
+          width: 75%;
         }
         #movie-filter {
-          flex-basis: 25%;
+          width: 25%;
 
           @media screen and (max-width: $break-small) {
             order: -1;

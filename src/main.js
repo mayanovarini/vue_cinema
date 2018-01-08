@@ -28,9 +28,14 @@ new Vue({
         template: `<div id="movie-filter">
                       <h2>Filter Results</h2>
                       <div class="filter-group">
-                        <check-filter v-for="genre in genres" v-bind:title="genre"></check-filter>
+                        <check-filter v-for="genre in genres" v-bind:title="genre" v-on:check-filter="checkFilter"></check-filter>
                       </div>
                    </div>`,
+        methods: {
+          checkFilter(){
+            console.log("check filter is fired!");
+          }
+        },
         components: {
           'check-filter': {
             data() {
