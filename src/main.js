@@ -4,9 +4,20 @@ import genres from './util/genres.js'
 
 new Vue({
   el: '#app',
+  data: {
+    genre: [],
+    time: []
+  },
   methods: {
     checkFilter(category, title, checked){
-      console.log (category, title, checked)
+      if (checked) {
+        this[category].push(title);
+      } else {
+        let index = this[category].indexOf(title);
+        if (index > -1) {
+          this[category].splice(index, 1);
+        }
+      }
     }
   },
   components: {
@@ -17,12 +28,13 @@ new Vue({
         data() {
           return {
             movies: [
-              { title: 'Pulp Fiction' },
-              { title: 'Doraemon' },
-              { title: 'Jumanji' }
+              { title: 'Pulp Fiction', genre: genres.CRIME },
+              { title: 'Doraemon', genre: genres.COMEDY },
+              { title: 'Jumanji', genre: genres.COMEDY }
             ]
           }
-        }
+        },
+        props: ['genre', 'time']
     },
     'movie-filter': {
         data() {
