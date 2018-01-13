@@ -11,6 +11,8 @@ new Vue({
   methods: {
     checkFilter(category, title, checked){
       if (checked) {
+        // this[..] is an accessor syntax that allows dynamic selection of an object property,
+        // in this case it will be genre or time
         this[category].push(title);
       } else {
         let index = this[category].indexOf(title);
@@ -23,7 +25,7 @@ new Vue({
   components: {
     'movie-list': {
         template: `<div id="movie-list">
-                      <div v-for="movie in movies" class="movie">{{ movie.title }}</div>
+                      <div v-for="movie in filteredMovies" class="movie">{{ movie.title }}</div>
                    </div>`,
         data() {
           return {
@@ -34,7 +36,24 @@ new Vue({
             ]
           }
         },
-        props: ['genre', 'time']
+        props: ['genre', 'time'],
+        methods: {
+          moviePassesGenreFilter(movie) {
+            // this.genre is from the props 'genre' which contains genres selected from the check-filter -> movie-filter -> app component
+            // checking if the movie.genre exists in genre prop
+            if (!this.genre.length) {
+              return true;
+            } else {
+              return this.genre.find(genre => movie.genre === genre);
+            }
+          }
+        },
+        computed: {
+          filteredMovies() {
+            // filtering ALL movies from movie-list data and run moviePassesGenreFilter function on each movie
+            return this.movies.filter(this.moviePassesGenreFilter); // returns all MOVIES when the moviePassesGenreFilter returns true
+          }
+        }
     },
     'movie-filter': {
         data() {

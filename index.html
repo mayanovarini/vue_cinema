@@ -20,6 +20,7 @@
     </div>
     <div id="overview">
       <div id="main">
+        <!-- v-bind genre prop of movie-list to genre data of app component -->
         <movie-list v-bind:genre="genre" v-bind:time="time"></movie-list>
         <movie-filter v-on:check-filter="checkFilter"></movie-filter>
       </div>
