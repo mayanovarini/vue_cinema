@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import genres from '../util/genres.js'
+  import genres from '../util/genres.js'
 
   export default {
     data() {
