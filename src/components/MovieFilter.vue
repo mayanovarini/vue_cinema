@@ -11,6 +11,8 @@
 
 <script>
   import genres from '../util/genres.js';
+  import CheckFilter from './CheckFilter.vue';
+
   export default {
     data() {
       return {
@@ -24,24 +26,7 @@
       }
     },
     components: {
-      'check-filter': {
-        data() {
-          return {
-            checked: false
-          }
-        },
-        props: ['title'],
-        template: `<div class="check-filter" v-bind:class="{ active:checked }" v-on:click="checkFilter">
-                    <span class="checkbox"></span>
-                    <span class="check-filter-title">{{ title }}</span>
-                  </div>`,
-        methods: {
-          checkFilter() {
-            this.checked = !this.checked;
-            this.$emit('check-filter', 'genre', this.title, this.checked);
-          }
-        }
-      }
+      CheckFilter
     }
   }
 </script>

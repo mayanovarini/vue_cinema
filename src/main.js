@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import './style.scss';
-import genres from './util/genres.js';
 import MovieList from './components/MovieList.vue';
 import MovieFilter from './components/MovieFilter.vue';
+
 new Vue({
   el: '#app',
   data: {
