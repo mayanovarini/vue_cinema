@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import './style.scss';
 import genres from './util/genres.js'
+import MovieList from './components/MovieList.vue';
 
 new Vue({
   el: '#app',
@@ -23,38 +24,7 @@ new Vue({
     }
   },
   components: {
-    'movie-list': {
-        template: `<div id="movie-list">
-                      <div v-for="movie in filteredMovies" class="movie">{{ movie.title }}</div>
-                   </div>`,
-        data() {
-          return {
-            movies: [
-              { title: 'Pulp Fiction', genre: genres.CRIME },
-              { title: 'Doraemon', genre: genres.COMEDY },
-              { title: 'Jumanji', genre: genres.COMEDY }
-            ]
-          }
-        },
-        props: ['genre', 'time'],
-        methods: {
-          moviePassesGenreFilter(movie) {
-            // this.genre is from the props 'genre' which contains genres selected from the check-filter -> movie-filter -> app component
-            // checking if the movie.genre exists in genre prop
-            if (!this.genre.length) {  // if empty
-              return true;
-            } else {
-              return this.genre.find(genre => movie.genre === genre);
-            }
-          }
-        },
-        computed: {
-          filteredMovies() {
-            // filtering ALL movies from movie-list data and run moviePassesGenreFilter function on each movie
-            return this.movies.filter(this.moviePassesGenreFilter); // returns all MOVIES when the moviePassesGenreFilter returns true
-          }
-        }
-    },
+    MovieList, // vue will turn this into movie-list, and using destructuring assignment, because variable and property name are the same, use one of them
     'movie-filter': {
         data() {
           return {
