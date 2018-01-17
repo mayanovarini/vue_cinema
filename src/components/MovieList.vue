@@ -13,7 +13,7 @@
         movies: [
           { title: 'Pulp Fiction', genre: genres.CRIME },
           { title: 'Doraemon', genre: genres.COMEDY },
-          { title: 'Jumanji', genre: genres.COMEDY }
+          { title: 'Jumanji 2', genre: genres.COMEDY }
         ]
       }
     },
