@@ -12,7 +12,8 @@ new Vue({
   el: '#app',
   data: {
     genre: [],
-    time: []
+    time: [],
+    movies: []
   },
   methods: {
     checkFilter(category, title, checked){
@@ -37,6 +38,8 @@ new Vue({
     // $http is an object from vue-resource that is imported at the top
     // $http will take care of all the http requests
 
-    console.log(this.$http); // attaching the vue instance (this) to the $http object from vue-resource
+    this.$http.get('/api').then(response => {
+      this.movies = response.data;
+    }); // attaching the vue instance (this) to the $http object from vue-resource
   }
 });
