@@ -1,7 +1,7 @@
 <template>
   <div id="movie-list">
     <!-- modify the interpolated text into a format that is corresponding to the API data -->
-    <movie-item v-for="movie in filteredMovies" class="movie" v-bind:movie="movie"></movie-item>
+    <movie-item v-for="movie in filteredMovies" v-bind:movie="movie.movie"></movie-item>
   </div>
 </template>
 
