@@ -1,6 +1,7 @@
 <template>
   <div id="movie-list">
-    <div v-for="movie in filteredMovies" class="movie">{{ movie.title }}</div>
+    <!-- modify the interpolated text into a format that is corresponding to the API data -->
+    <div v-for="movie in filteredMovies" class="movie">{{ movie.movie.Title }}</div>
   </div>
 </template>
 
@@ -8,16 +9,8 @@
   import genres from '../util/genres.js'
 
   export default {
-    data() {
-      return {
-        movies: [
-          { title: 'Pulp Fiction', genre: genres.CRIME },
-          { title: 'Doraemon', genre: genres.COMEDY },
-          { title: 'Jumanji 2', genre: genres.COMEDY }
-        ]
-      }
-    },
-    props: ['genre', 'time'],
+    // add movies props which will connect main component data into movie-list component, making them reactive
+    props: ['genre', 'time', 'movies'],
     methods: {
       moviePassesGenreFilter(movie) {
         // this.genre is from the props 'genre' which contains genres selected from the check-filter -> movie-filter -> app component
