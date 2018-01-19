@@ -4,7 +4,7 @@
       <!-- modify the interpolated text into a format that is corresponding to the API data -->
       <movie-item v-for="movie in filteredMovies" v-bind:movie="movie.movie"></movie-item>
     </div>
-    <div v-else-if="movies.length" class="no-results">
+    <div v-else-if="!filteredMovies.length" class="no-results">
       No results.
     </div>
     <div v-else class="no-results">
