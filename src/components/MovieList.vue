@@ -16,8 +16,8 @@
       moviePassesGenreFilter(movie) {
         // this.genre is from the props 'genre' which contains genres selected from the check-filter -> movie-filter -> app component
         // checking if the movie.genre exists in genre prop
-        if (!this.genre.length) {  // if empty
-          return true;
+        if (!this.genre.length) {  // if empty / nothing is selected
+          return true; // all movie should show up unfiltered
         } else {
           return this.genre.find(genre => movie.genre === genre);
         }
