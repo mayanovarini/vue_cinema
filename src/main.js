@@ -5,7 +5,14 @@ import MovieFilter from './components/MovieFilter.vue';
 import VueResource from 'vue-resource';
 import moment from 'moment-timezone';
 
-Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.moment } });
+moment.tz.setDefault("UTC"); // to set our timezone to be UTC, same like in api.js
+
+// define a new property called $moment, of Vue.prototype object
+// Vue.prototype will make $moment available across all components
+// Vue knows how every component can connect to the $root
+Object.defineProperty(Vue.prototype, '$moment', {
+  get() { return this.$root.moment }
+});
 
 // we want the vue instance will be able to use objects (e.g $http) from VueResource
 // .use method installs VueResource to be the instance method of our main Vue object
