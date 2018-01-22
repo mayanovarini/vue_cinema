@@ -11,7 +11,7 @@
         <div class="movie-sessions">
           <div v-for="session in sessions" class="session-time-wrapper">
             <div class="session-time">
-              {{ session.time }}
+              {{ formatSessionTime(session.time) }}
             </div>
           </div>
         </div>
@@ -21,7 +21,12 @@
 
 <script>
   export default {
-    props: ['movie', 'sessions']
+    props: ['movie', 'sessions'],
+    methods: {
+      formatSessionTime(raw) {
+        return this.$moment(raw).format('h:mm A'); // format method displays the session data into in hour:minute AM/PM
+      }
+    }
   }
 
 </script>
