@@ -24,7 +24,7 @@ new Vue({
     genre: [],
     time: [],
     movies: [],
-    moment // destructuring assignment
+    moment // this.$root.moment will pick up this moment from data
   },
   methods: {
     checkFilter(category, title, checked){
