@@ -3,6 +3,9 @@ import './style.scss';
 import MovieList from './components/MovieList.vue';
 import MovieFilter from './components/MovieFilter.vue';
 import VueResource from 'vue-resource';
+import moment from 'moment-timezone';
+
+Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.moment } });
 
 // we want the vue instance will be able to use objects (e.g $http) from VueResource
 // .use method installs VueResource to be the instance method of our main Vue object
@@ -13,7 +16,8 @@ new Vue({
   data: {
     genre: [],
     time: [],
-    movies: []
+    movies: [],
+    moment // destructuring assignment
   },
   methods: {
     checkFilter(category, title, checked){
