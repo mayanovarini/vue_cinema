@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    props: ['movie', 'sessions'],
+    props: ['movie', 'sessions', 'day'],
     methods: {
       formatSessionTime(raw) {
         return this.$moment(raw).format('h:mm A'); // format method displays the session data into in hour:minute AM/PM

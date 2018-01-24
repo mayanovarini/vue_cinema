@@ -24,7 +24,8 @@ new Vue({
     genre: [],
     time: [],
     movies: [],
-    moment // this.$root.moment will pick up this moment from data
+    moment, // this.$root.moment will pick up this moment from data
+    day: moment() // need to be in main root because it will be shared by different components
   },
   methods: {
     checkFilter(category, title, checked){
