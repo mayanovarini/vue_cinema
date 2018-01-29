@@ -39,12 +39,17 @@
           });
           return matched;
         }
+      },
+      sessionPassesTimeFilter(session) {
+        return true;
       }
     },
     computed: {
       filteredMovies() {
         // filtering ALL movies from movie-list data and run moviePassesGenreFilter function on each movie
-        return this.movies.filter(this.moviePassesGenreFilter); // returns all MOVIES when the moviePassesGenreFilter returns true
+        return this.movies
+                 .filter(this.moviePassesGenreFilter); // returns all MOVIES when the moviePassesGenreFilter returns true
+                 .filter(movie => movie.sessions.find(this.sessionPassesTimeFilter));
       }
     },
     components: {
