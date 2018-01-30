@@ -49,7 +49,7 @@
         } else if (this.time[0] === times.AFTER_6PM){
             return this.$moment(session.time).hour() >= 18;
         } else {
-            return this.$moment(session.time).hour() < 18;        
+            return this.$moment(session.time).hour() < 18;
         }
       }
     },
@@ -57,7 +57,7 @@
       filteredMovies() {
         // filtering ALL movies from movie-list data and run moviePassesGenreFilter function on each movie
         return this.movies
-                 .filter(this.moviePassesGenreFilter); // returns all MOVIES when the moviePassesGenreFilter returns true
+                 .filter(this.moviePassesGenreFilter) // returns all MOVIES when the moviePassesGenreFilter returns true
                  .filter(movie => movie.sessions.find(this.sessionPassesTimeFilter));
       }
     },
